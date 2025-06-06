@@ -4,6 +4,7 @@
 
 --CREATE SCHEMA CT (begins the left side of: CT.table_name)
 
+
 --> Table 1:Dealerships
 CREATE TABLE CT.dealerships (
     dealership_id INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
@@ -11,6 +12,7 @@ CREATE TABLE CT.dealerships (
     address VARCHAR(50) NULL,
     phone VARCHAR(12) NULL
 );
+
 
 --> Table 2: Vehicles
 CREATE TABLE CT.vehicles (
@@ -20,10 +22,13 @@ CREATE TABLE CT.vehicles (
     sold BIT DEFAULT 0 NULL
 );
 
+
 --> Table 3: Inventory (track which dealership has the vehicle)
 CREATE TABLE CT.inventory (
     dealership_id INT NULL,
-    VIN VARCHAR(20) NULL
+    VIN VARCHAR(20) NULL,
+    FOREIGN KEY (dealership_id) REFERENCES CT.dealerships(dealership_id),
+    FOREIGN KEY (VIN) REFERENCES CT.vehicles(VIN)
 );
 
 
