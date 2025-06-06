@@ -61,3 +61,5 @@ VALUES
     ('2025-06-04', 'Taylor', 'Nguyen', '5553332222', '789 Pine Rd', 12500, '1FAFP404X1F123321', 2);
 
 
+--To drop a table:
+--> DROP TABLE IF EXISTS CT.table_name;
